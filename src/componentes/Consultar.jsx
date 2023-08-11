@@ -8,7 +8,7 @@ function Consultar({ dataUpdated }) {
     }, [dataUpdated]); // Agregar dataUpdated como dependencia
 
     const fetchData = () => {
-        fetch('http://localhost/prueba/api.php?apicall=readusuario')
+        fetch('https://alejo1016.000webhostapp.com/api.php?apicall=readusuario')
             .then(response => response.json())
             .then(data => setData(data.contenido))
             .catch(error => console.log(error));
@@ -20,13 +20,11 @@ function Consultar({ dataUpdated }) {
             <ul>
                 {Array.isArray(data) ? (
                     data.map(item => (
-                        <li key={item.Id_mueble}>
-                            <p>Id_mueble: {item.Id_mueble}</p>
+                        <li key={item.Id_accesorio}>
+                            <p>Id_accesorio: {item.Id_accesorio}</p>
                             <p>nombre: {item.nombre}</p>
-                            <p>idcategoria: {item.idcategoria}</p>
-                            <p>medidas: {item.medidas}</p>
-                            <p>color: {item.color}</p>
                             <p>precio: {item.precio}</p>
+                            <p>tipo_de_accesorio: {item.tipo_de_accesorio}</p>
 
 
 
